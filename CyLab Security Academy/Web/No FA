@@ -1,0 +1,68 @@
+Challenge Overview
+
+This challenge demonstrates a vulnerable implementation of Two-Factor Authentication (2FA).
+
+The application uses username/password authentication followed by OTP verification.
+
+---
+
+Recon
+
+Leaked credentials were found in the provided files containing a hashed admin password.
+
+The hash was cracked using CrackStation.
+
+Password:
+apple@123
+
+
+---
+
+Login
+
+Logged in with the admin credentials.
+
+The application then requested an OTP.
+
+---
+
+#Session Analysis
+
+A session cookie was found using Developer Tools.
+
+Decoded the cookie using:
+
+flask-unsign --decode --cookie "<cookie>"
+
+Decoded session:
+
+
+{
+  'logged': 'false',
+  'otp_secret': '7232',
+  'otp_timestamp': 1774554985.533848,
+  'username': 'admin'
+}
+
+
+---
+
+Vulnerability
+
+The OTP was stored inside the client-side session cookie.
+
+---
+
+Exploitation
+
+1. Login with admin credentials
+2. Extract the session cookie
+3. Decode the cookie
+4. Get the `otp_secret`
+5. Use it as the OTP
+
+---
+
+Flag
+
+picoctf{...}
