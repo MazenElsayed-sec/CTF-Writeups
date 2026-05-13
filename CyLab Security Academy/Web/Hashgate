@@ -1,0 +1,56 @@
+Challenge Overview
+
+This challenge demonstrates weak access control using predictable user IDs and MD5 hashes.
+
+---
+
+Recon
+
+Credentials were found in the page source and used to log in.
+
+After login, the application redirected to:
+
+
+?id=3000
+
+
+The application used MD5 hashes of numeric IDs to identify users.
+
+---
+
+Analysis
+
+Intercepted the requests using Burp Suite.
+
+Discovered that the application relied on hashed IDs.
+
+---
+
+Exploitation
+
+Generated MD5 hashes for IDs from 3000 to 3020.
+
+Used Burp Suite Intruder to test the generated hashes.
+
+Found the following hash belonging to the admin account:
+
+4110a1994471c595f7583ef1b74ba4cb
+
+Reversed the hash using CrackStation:
+
+
+3013 -> 4110a1994471c595f7583ef1b74ba4cb
+
+
+---
+
+Result
+
+The admin ID was:
+3013
+
+---
+
+Flag
+
+picoctf{...}
