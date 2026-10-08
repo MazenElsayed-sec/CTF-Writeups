@@ -1,0 +1,30 @@
+Solution:
+
+1. Open the challenge and create a new account, then log in.
+2. Navigate to the feature that allows users to publish posts.
+3. Test the post input with a single quote:
+    '
+4. Observe the database syntax error returned by the application. This indicates that the input is being directly incorporated into an SQL query.
+5. Test SQLite-specific syntax to identify the database engine and understand the structure of the vulnerable query.
+6. After adjusting the injection to match the query structure, use:
+ 
+     hello' || (SQL_command));--
+
+7. Confirm that the backend is using SQLite.
+8. Enumerate the database schema through SQLite's sqlite_master table.
+9. Retrieve the table definition and identify the users table:
+  
+    xde43_users
+
+10. Identify the relevant columns:
+
+    id
+    name
+    email
+    password
+    role
+
+11. Query the users table for the administrator's password:
+      hello' || (SELECT password FROM xde43_users WHERE role="admin" ));--
+
+12. Use the retrieved administrator credentials to complete the challenge.
