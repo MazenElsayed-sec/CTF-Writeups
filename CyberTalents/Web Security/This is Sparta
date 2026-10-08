@@ -1,0 +1,12 @@
+Solution:
+
+1. Open the challenge page and inspect the page source code.
+2. Look for suspicious JavaScript code inside the <script> tags.
+3. Notice that the JavaScript strings are encoded using hexadecimal escape sequences such as \x76, \x61, etc.
+4. Decode the JavaScript to reveal the actual strings and logic.
+5. Analyze the decoded code and identify that the check() function retrieves the values of the user and pass input fields.
+6. Observe that the code compares both input values against Cyber-Talent.
+7. Enter Cyber-Talent as the username.
+8. Enter Cyber-Talent as the password.
+9. Submit the credentials.
+10. A congratulatory popup containing the flag is displayed.
