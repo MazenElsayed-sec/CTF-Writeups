@@ -1,0 +1,17 @@
+Solution:
+
+1. Start the challenge machine and access the Dark Project website using the provided URL.
+2. Inspect the website's source code and examine the navigation links to identify potential file inclusion vulnerabilities.
+3. Test for Local File Inclusion (LFI) using a path traversal payload:
+   
+   ../../../../etc/passwd
+  
+4. Since the initial test does not work, investigate PHP Wrappers, which allow PHP to access different types of streams, including files.
+5. Use the php://filter wrapper to read the source code of a PHP file in Base64-encoded format:
+   
+   php://filter/convert.base64-encode/resource=index
+
+6. Copy the Base64-encoded output returned by the application.
+7. Open CyberChef and use the From Base64 operation to decode the output.
+8. Inspect the decoded PHP source code and locate the challenge flag.
+9. Submit the flag to complete the challenge.
