@@ -1,0 +1,9 @@
+Solution:
+
+1. Inspect the page source code and find the exposed credentials for the support account.
+2. Log in using the discovered support credentials.
+3. Open Developer Tools (F12) and navigate to Application → Cookiesز
+4. Locate the cookie containing the role value.
+5. Change the role value from support to admin.
+6. Refresh the page to obtain administrative access.
+7. Retrieve the flag and submit it to complete the challenge.
