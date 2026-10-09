@@ -1,0 +1,38 @@
+Solution:
+
+1. Copy the corrupted Base64 string:
+   
+   R[corrupted]BR3tCNDUzXzYxWDdZXzRSfQ==
+
+2. Try decoding the string directly using the Base64 command:
+   
+   echo -n 'RBR3tCNDUzXzYxWDdZXzRSfQ==' | base64 -d
+
+3. Since the string is corrupted, brute-force the missing two Base64 characters using Python.
+
+4. Use the following script to test all possible combinations:
+
+
+   #!/usr/bin/env python3
+   import base64
+
+   charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+   target = "BR3tCNDUzXzYxWDdZXzRSfQ=="
+
+   for a in charset:
+       for b in charset:
+           try:
+               decoded = base64.b64decode("R" + a + b + target)
+               if b"FLAG" in decoded.upper():
+                   print("Found:", decoded.decode())
+                   exit()
+           except Exception:
+               continue
+
+
+
+5. Run the script and inspect the decoded output.
+6. Retrieve the flag:
+   
+   FLAG{B453_61X7Y_4R}
+   
