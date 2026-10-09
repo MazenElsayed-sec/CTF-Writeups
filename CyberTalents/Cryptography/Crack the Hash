@@ -1,0 +1,11 @@
+Solution Steps:
+
+1. Copy the hash provided in the lab.
+2. Open Hashes.com.
+3. Paste the hash into the hash lookup field and start the cracking process.
+4. Wait for the website to identify the corresponding plaintext value.
+5. The resulting flag is:
+   
+   Iamtheflag
+
+6. Submit the flag to complete the challenge.
