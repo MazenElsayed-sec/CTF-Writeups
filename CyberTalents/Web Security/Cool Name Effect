@@ -1,0 +1,15 @@
+Solution:
+
+1. Open the challenge on CyberTalents.
+2. Inspect the input field and observe how the application reflects submitted text on the page.
+3. Test a basic XSS payload:
+   
+   <script>alert(1)</script>
+
+4. Observe that the application blocks or sanitizes the <script> tag.
+5. Try an alternative XSS payload using an image element:
+   
+   <img/src=x onerror=alert(1)>
+
+6. Submit the payload and observe that the JavaScript executes through the image's onerror event.
+7. Retrieve the flag displayed by the challenge and submit it to complete the lab.
