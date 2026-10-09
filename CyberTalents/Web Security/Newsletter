@@ -1,0 +1,13 @@
+Solution:
+
+1. Open the challenge and identify the email submission functionality.
+2. Enter a test email address and intercept the request using Burp Suite.
+3. Inspect the request and identify the email parameter.
+4. Test for OS command injection by appending a shell command separator (;) to the email parameter.
+5. Use the ls command to list the contents of the application's root directory:
+   
+   email=test%40gmail.com;ls;
+
+7. Forward the modified request and inspect the response for the directory listing.
+8. Identify the backup file name from the output.
+9. Submit the discovered backup file name to complete the challenge.
