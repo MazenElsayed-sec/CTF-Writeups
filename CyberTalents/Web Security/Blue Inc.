@@ -1,0 +1,26 @@
+Solution Steps:
+
+1. Open the Blue Inc challenge and log in using the provided credentials:
+   
+   Username: demo
+   Password: demo
+
+2. Navigate to the profile page and observe the URL parameter:
+   
+   /profile.php?user=demo
+
+3. Test the user parameter with a basic SQL Injection payload:
+   
+   demo' OR 1=1 --
+
+4. Observe that the SQL Injection attempt does not work.
+5. Change the user parameter in the URL from demo to admin.
+6. Open Burp Suite and intercept the HTTP request to profile.php.
+7. Inspect the request and observe that the user parameter and cookie both contain the value demo.
+
+8. Modify the request by changing the user parameter and cookie value from demo to admin.
+9. Forward the modified request to the server.
+10. Observe that the application grants access to the admin profile, demonstrating an authorization or session-management vulnerability.
+11. Retrieve and submit the flag:
+    
+    15716a249064f7e9684a816dcdb05282
