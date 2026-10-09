@@ -1,0 +1,25 @@
+Solution:
+
+1. Open the challenge website.
+2. View the page source and identify the JavaScript file:
+   
+   admin/assets/app.js
+
+3. Attempt to access the /admin path and observe the 403 Forbidden response.
+
+4. Use a 403 bypass technique to access the restricted admin page.
+5. Inspect the admin login page source and discover the exposed database file path:
+   
+   secret-database/db.json
+
+6. Access the database file using the discovered path and retrieve the stored hash:
+   
+   ab003765f3424bf8e2c8d1d69762d72c
+
+7. Analyze the hash using a hash-identification tool and identify it as an MD5 hash.
+8. Use a hash lookup service such as https://hashes.com/en/decrypt/hash to find the plaintext value.
+9. Retrieve the plaintext:
+   
+   badboy
+
+10. Submit badboy as the flag to complete the challenge.
