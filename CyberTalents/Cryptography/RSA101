@@ -1,0 +1,23 @@
+Solution:
+
+1. Download the challenge archive:
+   
+   wget https://hubchallenges.s3.eu-west-1.amazonaws.com/Crypto/RSA101.zip
+
+2. Extract the archive:
+   
+   unzip RSA101.zip
+
+3. Locate the encrypted file cipher and the private key key.pem.
+
+4. Decrypt the cipher using OpenSSL:
+   
+   openssl pkeyutl -decrypt -in cipher -out flag.txt -inkey key.pem
+
+5. Read the decrypted output:
+   
+   cat flag.txt
+
+6. Retrieve the flag:
+   
+   flag{RSA_nice_try}
