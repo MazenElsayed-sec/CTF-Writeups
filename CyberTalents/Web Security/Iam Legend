@@ -1,0 +1,10 @@
+Solution:
+
+1. Open the challenge and navigate to the page containing the login panel.
+2. Inspect the page source code and locate the suspicious, obfuscated JavaScript string.
+3. Identify the obfuscation technique as JSFuck (JavaScript Fuck), which uses unusual JavaScript expressions to hide the original code.
+4. Use a JavaScript de-obfuscation tool to decode the string.
+5. Analyze the decoded JavaScript and identify the flag
+6. Enter the credentials Cyber as the username and Talent as the password.
+7. Submit the credentials and observe the resulting popup to verify the behavior.
+8. Submit the flag to complete the challenge.
