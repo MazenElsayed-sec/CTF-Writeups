@@ -1,0 +1,34 @@
+Solution:
+
+1. Start the challenge and open the provided URL.
+2. Inspect the page source code and find the HTML comment containing the credentials:
+   
+   <!-- Try using Guest:Guest -->
+
+3. Log in using the credentials:
+   
+   Username: Guest
+   Password: Guest
+
+4. Observe the access-denied message indicating that administrator privileges are required.
+5. Open the browser's Developer Tools (F12) and navigate to Application → Cookies.
+6. Locate the Authentication cookie and copy its value:
+    bG9naW49R3Vlc3Q%3D
+
+7. URL-decode the cookie value:
+    bG9naW49R3Vlc3Q=
+
+8. Base64-decode the result: 
+    login=Guest
+
+9. Change the value to:
+   
+   login=admin
+
+10. Base64-encode the modified value and URL-encode the result:
+    bG9naW49YWRtaW4%3D
+
+11. Replace the original cookie value with the modified value and refresh the page.
+12. Alternatively, intercept the login request using Burp Suite, modify the relevant cookie value, and forward the request or send it to Repeater.
+13. Verify that administrator access is granted and retrieve the flag.
+14. Submit the flag to complete the challenge.
