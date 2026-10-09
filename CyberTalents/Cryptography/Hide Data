@@ -1,0 +1,12 @@
+Solution Steps:
+
+1. Copy the encrypted text provided in the challenge:
+   
+   gur synt vf 2w68lsudym Vg vf cerggl rnfl gb frr gur synt ohg pna lbh frr vg v gbbx arneyl 1 zvahgr gb rapbqr guvf jvgu EBG13 tbbq yhpx va fbyivat gung
+
+2. Identify the cipher as ROT13, a substitution cipher that shifts each letter 13 positions through the alphabet.
+3. Open CyberChef and apply the ROT13 operation to decode the text.
+4. Read the decoded message and retrieve the hidden flag.
+5. The flag is:
+   
+   2j68yfhqlz
